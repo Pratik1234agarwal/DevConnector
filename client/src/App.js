@@ -15,6 +15,7 @@ import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
 import PrivateRoute from './components/routing/PrivateRoute';
+import Wrapper from './components/Wrapper';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -35,11 +36,13 @@ const App = () => {
 
   return (
     <Provider store={store}>
+      {console.log('store', store)}
+      {console.log(store.getState())}
       <Router>
         <Fragment>
           <Navbar />
           <Route exact path='/' component={Landing} />
-          {localStorage.token && (<section className='container'>
+          <section className='container'>
             <Alert />
             <Switch>
               <Route exact path='/register' component={Register} />
@@ -70,7 +73,7 @@ const App = () => {
               <PrivateRoute exact path='/posts' component={Posts} />
               <PrivateRoute exact path='/posts/:id' component={Post} />
             </Switch>
-          </section>)}
+          </section>
         </Fragment>
       </Router>
     </Provider>
