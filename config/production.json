@@ -1,5 +1,5 @@
 {
-  "mongoURI": "mongodb+srv://pratik123:pratik123@cluster0.in01s.mongodb.net/test?retryWrites=true&w=majority",
+  "mongoURI": "Paster Your mongodb id HERE",
   "jwtSecret": "SecretToken1234",
   "githubClientId": "751e6afe4a54dc1482b8",
   "githubSecret": "616b9c64e2031e17b60e2dac6e4d87e54c61aa08"

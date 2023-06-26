@@ -1,11 +1,13 @@
-const mongoose = require('mongoose');
-const config = require('config');
-const db = config.get('mongoURI');
+const mongoose = require("mongoose");
+const config = require("config");
+const db = config.get("mongoURI")
+  ? config.get("mongoURI")
+  : process.env.mongoURI;
 
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useUnifiedTopology', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
+mongoose.set("useNewUrlParser", true);
+mongoose.set("useUnifiedTopology", true);
+mongoose.set("useFindAndModify", false);
+mongoose.set("useCreateIndex", true);
 mongoose.connect(db);
 
 const connectDB = async () => {
@@ -15,7 +17,7 @@ const connectDB = async () => {
       useCreateIndex: true,
       useNewUrlParser: true,
     });
-    console.log('MongoDB connected');
+    console.log("MongoDB connected");
   } catch (err) {
     console.error(err.message);
     // Exit process with failure
