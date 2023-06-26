@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const config = require("config");
-const db = config.get("mongoURI")
-  ? config.get("mongoURI")
-  : process.env.mongoURI;
+const db = process.env.mongoURI;
 
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useUnifiedTopology", true);
